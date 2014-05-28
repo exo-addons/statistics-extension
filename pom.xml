@@ -57,6 +57,8 @@
         <!-- JUnit framework perfs -->
         <org.databene.contiperf.version>2.2.0</org.databene.contiperf.version>
         <org.easytesting.fest-assert-core.version>2.0M2</org.easytesting.fest-assert-core.version>
+        <!-- PLF is using groovy 1.7 -->
+        <gmaven-plugin.providerSelection>1.7</gmaven-plugin.providerSelection>
     </properties>
     <dependencyManagement>
         <dependencies>
