@@ -1,10 +1,10 @@
 package org.exoplatform.addons.statistics.api.rest;
 
 
-import org.exoplatform.addons.statistics.api.bo.StatisticBO;
+import org.exoplatform.addons.persistence.bo.StatisticBO;
+import org.exoplatform.addons.persistence.services.StatisticsService;
+import org.exoplatform.addons.persistence.web.listener.GuiceManager;
 import org.exoplatform.addons.statistics.api.exception.StatisticsException;
-import org.exoplatform.addons.statistics.api.services.StatisticsService;
-import org.exoplatform.addons.statistics.api.utils.ServiceLookupManager;
 import org.exoplatform.addons.statistics.api.utils.Util;
 import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
@@ -40,7 +40,7 @@ public class StatisticsRestService implements ResourceContainer {
     @RolesAllowed("administrators")
     public Response cleanupStatistics(@Context UriInfo uriInfo) throws Exception {
 
-        statisticsService = ServiceLookupManager.getInstance().getStatisticsService();
+        statisticsService = GuiceManager.getInstance().getInstance(StatisticsService.class);
 
         try {
 
@@ -72,7 +72,7 @@ public class StatisticsRestService implements ResourceContainer {
                          @FormParam("site") String site,
                          @FormParam("siteType") String siteType) throws Exception  {
 
-        statisticsService = ServiceLookupManager.getInstance().getStatisticsService();
+        statisticsService = GuiceManager.getInstance().getInstance(StatisticsService.class);
 
         StatisticBO statisticBO = null;
 
@@ -116,7 +116,7 @@ public class StatisticsRestService implements ResourceContainer {
 
             String searchScope = Util.computeSearchParameters(criteria,scope);
 
-            statisticsService = ServiceLookupManager.getInstance().getStatisticsService();
+            statisticsService = GuiceManager.getInstance().getInstance(StatisticsService.class);
 
 
             statisticBOs = statisticsService.search(criteria, searchScope, Integer.parseInt(offset), Integer.parseInt(limit), Integer.parseInt(sort), Integer.parseInt(order), 0);
@@ -164,7 +164,7 @@ public class StatisticsRestService implements ResourceContainer {
 
         try {
 
-            statisticsService = ServiceLookupManager.getInstance().getStatisticsService();
+            statisticsService = GuiceManager.getInstance().getInstance(StatisticsService.class);
 
             statisticBOs = statisticsService.filter(user, category, categoryId, type, site, siteType, content,true, Integer.parseInt(timestamp));
 
@@ -229,7 +229,7 @@ public class StatisticsRestService implements ResourceContainer {
          * adds space to space list
          *
          * @param statisticBO
-         * @see org.exoplatform.addons.statistics.api.bo.StatisticBO
+         * @see org.exoplatform.addons.persistence.bo.StatisticBO
          */
         public void addStatisticBO(StatisticBO statisticBO) {
             if (_statistics == null) {

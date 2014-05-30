@@ -2,25 +2,25 @@ package org.exoplatform.addons.statistics.portlet.statistics;
 
 import juzu.*;
 import juzu.template.Template;
-import org.apache.commons.io.IOUtils;
-import org.exoplatform.addons.statistics.api.bo.StatisticBO;
-import org.exoplatform.addons.statistics.api.services.StatisticsService;
-import org.exoplatform.addons.statistics.api.web.listener.StatisticsLifecycleListener;
+import org.exoplatform.addons.persistence.web.listener.GuiceManager;
+import org.exoplatform.addons.persistence.bo.StatisticBO;
+import org.exoplatform.addons.persistence.services.StatisticsService;
 import org.exoplatform.addons.statistics.populate.bean.PopulatorBean;
 import org.exoplatform.addons.statistics.populate.bean.StatisticBean;
 import org.exoplatform.addons.statistics.services.Utils;
 import org.exoplatform.commons.juzu.ajax.Ajax;
 import org.exoplatform.services.log.ExoLogger;
 import org.exoplatform.services.log.Log;
-
 import org.yaml.snakeyaml.TypeDescription;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
+
 import javax.inject.Inject;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.StringWriter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by menzli on 10/04/14.
@@ -40,7 +40,7 @@ public class StatisticsApplication {
 
     public StatisticsApplication () {
 
-        statisticsService = StatisticsLifecycleListener.getInstance().getInstance(StatisticsService.class);
+        statisticsService = GuiceManager.getInstance().getInstance(StatisticsService.class);
 
     }
 

@@ -34,6 +34,12 @@
         </dependency>
         <dependency>
             <groupId>org.exoplatform.addons.statistics</groupId>
+            <artifactId>exo-addons-statistics-persistence-spi</artifactId>
+            <type>jar</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.exoplatform.addons.statistics</groupId>
             <artifactId>exo-addons-statistics-api</artifactId>
             <type>jar</type>
             <scope>provided</scope>

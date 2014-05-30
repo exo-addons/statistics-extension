@@ -25,9 +25,5 @@
         xsi:schemaLocation="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd http://www.exoplatform.org/xml/ns/kernel_1_2.xsd"
         xmlns="http://www.exoplatform.org/xml/ns/kernel_1_2.xsd">
 
-    <component profiles="all">
-        <key>org.exoplatform.platform.welcomescreens.service.TermsAndConditionsService</key>
-        <type>org.exoplatform.addons.statistics.api.TermsAndConditionsServiceKiller</type>
-    </component>
 
 </configuration>

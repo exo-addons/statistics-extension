@@ -1,7 +1,6 @@
 package org.exoplatform.addons.statistics.api.utils;
 
 import org.exoplatform.addons.statistics.api.exception.StatisticsException;
-import org.exoplatform.container.PortalContainer;
 
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
