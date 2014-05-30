@@ -18,6 +18,7 @@
         <dependency>
             <groupId>org.exoplatform.addons.statistics</groupId>
             <artifactId>exo-addons-statistics-api</artifactId>
+            <scope>provided</scope>
         </dependency>
         <!-- FIN -->
         <!-- Mongodb Driver -->

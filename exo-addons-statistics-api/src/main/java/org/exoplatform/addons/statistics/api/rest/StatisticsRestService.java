@@ -35,12 +35,14 @@ public class StatisticsRestService implements ResourceContainer {
 
     private static String[] mediaTypes = new String[] { "json", "xml" };
 
+    public StatisticsRestService() {
+        this.statisticsService = GuiceManager.getInstance().getInstance(StatisticsService.class);
+    }
+
     @GET
     @Path("/cleanup")
     @RolesAllowed("administrators")
     public Response cleanupStatistics(@Context UriInfo uriInfo) throws Exception {
-
-        statisticsService = GuiceManager.getInstance().getInstance(StatisticsService.class);
 
         try {
 
@@ -71,8 +73,6 @@ public class StatisticsRestService implements ResourceContainer {
                          @FormParam("link") String link,
                          @FormParam("site") String site,
                          @FormParam("siteType") String siteType) throws Exception  {
-
-        statisticsService = GuiceManager.getInstance().getInstance(StatisticsService.class);
 
         StatisticBO statisticBO = null;
 
@@ -115,9 +115,6 @@ public class StatisticsRestService implements ResourceContainer {
         try {
 
             String searchScope = Util.computeSearchParameters(criteria,scope);
-
-            statisticsService = GuiceManager.getInstance().getInstance(StatisticsService.class);
-
 
             statisticBOs = statisticsService.search(criteria, searchScope, Integer.parseInt(offset), Integer.parseInt(limit), Integer.parseInt(sort), Integer.parseInt(order), 0);
 
@@ -163,8 +160,6 @@ public class StatisticsRestService implements ResourceContainer {
 
 
         try {
-
-            statisticsService = GuiceManager.getInstance().getInstance(StatisticsService.class);
 
             statisticBOs = statisticsService.filter(user, category, categoryId, type, site, siteType, content,true, Integer.parseInt(timestamp));
 
