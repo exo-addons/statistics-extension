@@ -22,7 +22,7 @@ public class AbstractTestCase {
 
         PropertyManager.overrideProperty(PropertyManager.PROPERTY_DB_SERVER_TYPE, PropertyManager.PROPERTY_DB_SERVER_TYPE_EMBED);
 
-        PropertyManager.overrideProperty(PropertyManager.PROPERTY_DB_SERVER_PORT, "27017");
+        PropertyManager.overrideProperty(PropertyManager.PROPERTY_DB_SERVER_PORT, "27777");
 
         ConnectionManager.forceNew();
 
