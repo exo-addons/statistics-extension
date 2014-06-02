@@ -9,6 +9,8 @@ import java.util.List;
  */
 public interface StatisticsService {
 
+    //TODO : add methods to calculate count of returned results according to a given criteria
+
     public static final String M_STATISTICS = "statistics";
 
     public void cleanupStatistics(long timestamp) throws Exception;

@@ -239,7 +239,7 @@ public class StatisticsServiceImpl implements StatisticsService {
                 statisticBO.setSite(doc.get("site").toString());
                 statisticBO.setSiteType(doc.get("siteType").toString());
 
-                //--- Add the statistic tupe to the collection
+                //--- Add the statistic tuple to the collection
                 statistics.add(statisticBO);
             }
          
