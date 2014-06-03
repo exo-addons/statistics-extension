@@ -5,7 +5,6 @@ import com.google.inject.Injector;
 import org.exoplatform.addons.persistence.services.es.ESModule;
 import org.exoplatform.addons.persistence.services.jdbc.JDBCModule;
 import org.exoplatform.addons.persistence.services.mongodb.MongoModule;
-import org.exoplatform.addons.utils.Constants;
 import org.exoplatform.addons.utils.PropertyManager;
 
 import javax.servlet.ServletContextEvent;
