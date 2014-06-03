@@ -93,7 +93,7 @@
         <dependencySet>
             <outputDirectory>/statistics/lib</outputDirectory>
             <includes>
-                <include>org.exoplatform.addons.statistics:exo-addons-statistics-api:jar</include>
+                <include>org.exoplatform.addons.storage:exo-storage-api-mongodb:jar</include>
             </includes>
             <scope>provided</scope>
             <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
@@ -102,7 +102,35 @@
         <dependencySet>
             <outputDirectory>/statistics/lib</outputDirectory>
             <includes>
-                <include>org.exoplatform.addons.statistics:exo-addons-statistics-persistence-spi:jar</include>
+                <include>org.exoplatform.addons.storage:exo-storage-api-core:jar</include>
+            </includes>
+            <scope>provided</scope>
+            <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
+            <useProjectArtifact>false</useProjectArtifact>
+        </dependencySet>
+
+        <dependencySet>
+            <outputDirectory>/statistics/lib</outputDirectory>
+            <includes>
+                <include>org.exoplatform.addons.storage:exo-storage-api-connector:jar</include>
+            </includes>
+            <scope>provided</scope>
+            <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
+            <useProjectArtifact>false</useProjectArtifact>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>/statistics/lib</outputDirectory>
+            <includes>
+                <include>org.exoplatform.addons.storage:exo-storage-api-jdbc:jar</include>
+            </includes>
+            <scope>provided</scope>
+            <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>
+            <useProjectArtifact>false</useProjectArtifact>
+        </dependencySet>
+        <dependencySet>
+            <outputDirectory>/statistics/lib</outputDirectory>
+            <includes>
+                <include>org.exoplatform.addons.storage:exo-storage-api-elasticsearch:jar</include>
             </includes>
             <scope>provided</scope>
             <outputFileNameMapping>${artifact.artifactId}-${artifact.baseVersion}.${artifact.extension}</outputFileNameMapping>

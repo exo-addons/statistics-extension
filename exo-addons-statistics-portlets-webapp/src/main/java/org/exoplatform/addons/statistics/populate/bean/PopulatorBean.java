@@ -7,13 +7,13 @@ import java.util.List;
  */
 public class PopulatorBean {
 
-    List<StatisticBean> statistics;
+    List<StatisticTO> statistics;
 
-    public List<StatisticBean> getStatistics() {
+    public List<StatisticTO> getStatistics() {
         return statistics;
     }
 
-    public void setStatistics(List<StatisticBean> statistics) {
+    public void setStatistics(List<StatisticTO> statistics) {
         this.statistics = statistics;
     }
 }

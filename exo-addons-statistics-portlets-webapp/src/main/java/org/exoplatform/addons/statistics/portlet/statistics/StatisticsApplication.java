@@ -2,11 +2,11 @@ package org.exoplatform.addons.statistics.portlet.statistics;
 
 import juzu.*;
 import juzu.template.Template;
-import org.exoplatform.addons.persistence.web.listener.GuiceManager;
-import org.exoplatform.addons.persistence.bo.StatisticBO;
-import org.exoplatform.addons.persistence.services.StatisticsService;
+import org.exoplatform.addons.storage.listener.GuiceManager;
+import org.exoplatform.addons.storage.model.StatisticsBean;
+import org.exoplatform.addons.storage.services.StatisticsService;
 import org.exoplatform.addons.statistics.populate.bean.PopulatorBean;
-import org.exoplatform.addons.statistics.populate.bean.StatisticBean;
+import org.exoplatform.addons.statistics.populate.bean.StatisticTO;
 import org.exoplatform.addons.statistics.services.Utils;
 import org.exoplatform.commons.juzu.ajax.Ajax;
 import org.exoplatform.services.log.ExoLogger;
@@ -80,16 +80,16 @@ public class StatisticsApplication {
 
 
 
-        List<StatisticBO> statisticBeanList;
+        List<StatisticsBean> statisticBeanList;
         try {
             statisticBeanList = statisticsService.getStatistics(0);
 
         } catch (Exception e) {
             log.error("Error while fetching synchronization target servers", e);
-            statisticBeanList = new ArrayList<StatisticBO>();
+            statisticBeanList = new ArrayList<StatisticsBean>();
         }
 
-        return Response.ok(StatisticBO.statisticstoJSON(statisticBeanList));
+        return Response.ok(StatisticsBean.statisticstoJSON(statisticBeanList));
     }
 
     @Ajax
@@ -130,7 +130,7 @@ public class StatisticsApplication {
 
         try {
 
-            for (StatisticBean stat:populatorBean.getStatistics())
+            for (StatisticTO stat:populatorBean.getStatistics())
             {
 
                 statisticsService.addEntry(stat.getUser(),stat.getFrom(),stat.getType(),stat.getCategory(),stat.getCategoryId(),stat.getContent(),stat.getLink(),stat.getSite(),stat.getSiteType());
@@ -163,7 +163,7 @@ public class StatisticsApplication {
     public PopulatorBean getData() {
         Constructor constructor = new Constructor(PopulatorBean.class);
         TypeDescription populatorDescription = new TypeDescription(PopulatorBean.class);
-        populatorDescription.putListPropertyType("statistics", StatisticBean.class);
+        populatorDescription.putListPropertyType("statistics", StatisticTO.class);
         constructor.addTypeDescription(populatorDescription);
         Yaml yaml = new Yaml(constructor);
         String data = getDataAsString();

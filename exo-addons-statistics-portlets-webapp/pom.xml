@@ -12,12 +12,12 @@
     <dependencies>
         <!-- eXo Persistence API-->
         <dependency>
-            <groupId>org.exoplatform.addons.statistics</groupId>
-            <artifactId>exo-addons-statistics-persistence-spi</artifactId>
+            <groupId>org.exoplatform.addons.storage</groupId>
+            <artifactId>exo-storage-api-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.exoplatform.addons.statistics</groupId>
-            <artifactId>exo-addons-statistics-api</artifactId>
+            <groupId>org.exoplatform.addons.storage</groupId>
+            <artifactId>exo-storage-api-mongodb</artifactId>
             <scope>provided</scope>
         </dependency>
         <!-- FIN -->

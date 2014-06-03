@@ -3,7 +3,7 @@ package org.exoplatform.addons.statistics.populate.bean;
 /**
  * Created by menzli on 22/05/14.
  */
-public class StatisticBean {
+public class StatisticTO {
 
     private String user;
 
